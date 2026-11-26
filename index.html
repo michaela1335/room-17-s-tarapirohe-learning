@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarapirohe Showcase | Our Learning & Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #fcfaf5;
+      --river-deep: #133c46;
+      --river-mid: #1f5c6b;
+      --river-light: #e3f2f4;
+      --gold-rich: #d4a347;
+      --gold-soft: #f7ecd2;
+      --coral-cute: #f07b67;
+      --text-dark: #1d2d35;
+      --text-muted: #556b75;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(212, 163, 71, 0.14) 0%, transparent 42%),
+        radial-gradient(circle at 90% 80%, rgba(31, 92, 107, 0.11) 0%, transparent 45%);
+    }
+
+    /* Opulent Hero Header */
+    header {
+      background: linear-gradient(135deg, var(--river-deep) 0%, var(--river-mid) 100%);
+      color: #ffffff;
+      padding: 4rem 1.5rem 5.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 5px solid var(--gold-rich);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(212, 163, 71, 0.65);
+      color: #ffe8b8;
+      padding: 0.45rem 1.15rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.2rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .mascot-wrapper {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 1.1rem;
+      background: var(--gold-soft);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid var(--gold-rich);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+      animation: float 3.5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+
+    h1, h2, h3 {
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    header p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+      color: #e4f1f5;
+    }
+
+    /* Decorative Wave */
+    .wave-divider {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave-divider svg {
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 38px;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* Learning Journey Section */
+    .learning-section {
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 2.5rem;
+      margin-top: -2.2rem;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 15px 40px rgba(19, 60, 70, 0.08);
+      border: 2px solid rgba(212, 163, 71, 0.4);
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.2rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--river-deep);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .pillar-card {
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-cream) 100%);
+      border: 1.5px solid #e6dec8;
+      border-radius: 20px;
+      padding: 1.4rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(212, 163, 71, 0.18);
+      border-color: var(--gold-rich);
+    }
+
+    .pillar-icon {
+      font-size: 1.7rem;
+      margin-bottom: 0.65rem;
+      display: inline-block;
+      background: var(--gold-soft);
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      text-align: center;
+      border-radius: 14px;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.15rem;
+      color: var(--river-deep);
+      margin-bottom: 0.4rem;
+    }
+
+    .pillar-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* Games Grid */
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+      gap: 1.85rem;
+    }
+
+    .game-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid #ebe4d5;
+      box-shadow: 0 10px 25px rgba(19, 60, 70, 0.06);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .game-card:not(.coming-soon):hover {
+      transform: translateY(-8px);
+      border-color: var(--gold-rich);
+      box-shadow: 0 20px 38px rgba(19, 60, 70, 0.14);
+    }
+
+    .thumb-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--river-light);
+      overflow: hidden;
+      border-bottom: 2px solid #f0eadc;
+    }
+
+    .thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .game-card:not(.coming-soon):hover .thumb-box img {
+      transform: scale(1.05);
+    }
+
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(19, 60, 70, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      backdrop-filter: blur(2px);
+    }
+
+    .game-card:not(.coming-soon):hover .play-overlay {
+      opacity: 1;
+    }
+
+    .play-pill {
+      background: var(--gold-rich);
+      color: #ffffff;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.05rem;
+      padding: 0.6rem 1.45rem;
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card-body {
+      padding: 1.4rem 1.5rem 1.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .creators-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--river-mid);
+      background: var(--river-light);
+      padding: 0.28rem 0.78rem;
+      border-radius: 999px;
+      align-self: flex-start;
+      margin-bottom: 0.7rem;
+    }
+
+    .card-body h3 {
+      font-size: 1.3rem;
+      color: var(--river-deep);
+      margin-bottom: 0.45rem;
+    }
+
+    .card-body p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.85rem;
+      border-top: 1px dashed #e5dec9;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--river-deep);
+    }
+
+    .card-footer span.action-text {
+      color: var(--coral-cute);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* Coming Soon Styling */
+    .game-card.coming-soon {
+      cursor: default;
+      background: #fdfbf7;
+      border: 2px dashed #d8c9a3;
+    }
+
+    .coming-soon-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #f7ecd2 0%, #e3f2f4 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--river-deep);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .coming-soon-badge {
+      background: var(--gold-rich);
+      color: #ffffff;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.38rem 1.05rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(212, 163, 71, 0.35);
+      margin-bottom: 0.45rem;
+    }
+
+    .coming-soon-sub {
+      font-size: 0.85rem;
+      color: var(--river-mid);
+      font-weight: 600;
+    }
+
+    /* Presentation Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 36, 43, 0.85);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-window {
+      background: #ffffff;
+      width: 100%;
+      max-width: 1180px;
+      height: 88vh;
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 3px solid var(--gold-rich);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      animation: popIn 0.25s ease-out;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-bar {
+      background: var(--river-deep);
+      color: #ffffff;
+      padding: 0.85rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .modal-title-group h3 {
+      font-size: 1.2rem;
+      color: #ffe8b8;
+    }
+
+    .modal-title-group span {
+      font-size: 0.85rem;
+      color: #cfe5eb;
+    }
+
+    .modal-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-external {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: background 0.2s;
+    }
+
+    .btn-external:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .btn-close {
+      background: var(--coral-cute);
+      color: #ffffff;
+      border: none;
+      padding: 0.45rem 1.05rem;
+      border-radius: 999px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+
+    .btn-close:hover {
+      transform: scale(1.05);
+    }
+
+    .modal-iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: #f4f7f8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid #e6dec8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header>
+    <div class="mascot-wrapper" title="Tarapirohe - Black-fronted Tern">
+      <!-- Cute Custom Tarapirohe SVG Icon -->
+      <svg width="60" height="60" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Body -->
+        <ellipse cx="33" cy="36" rx="18" ry="13" fill="#90A4AE"/>
+        <!-- Wing -->
+        <path d="M23 34C28 29 41 31 47 38C39 41 28 40 23 34Z" fill="#607D8B"/>
+        <!-- Tail -->
+        <path d="M48 34L60 28L55 37L61 42L47 39Z" fill="#78909C"/>
+        <!-- Head & Black Cap -->
+        <circle cx="22" cy="24" r="10" fill="#CFD8DC"/>
+        <path d="M12 23C12 17 17 13 23 13C28 13 31 16 32 21C26 21 18 22 12 23Z" fill="#1D2D35"/>
+        <!-- White Cheek Stripe -->
+        <path d="M13 24C17 24 23 24 28 22" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+        <!-- Cute Eye -->
+        <circle cx="19" cy="21" r="2" fill="#FFFFFF"/>
+        <circle cx="18.6" cy="21" r="1" fill="#111111"/>
+        <!-- Bright Orange Beak -->
+        <path d="M12 22L3 24.5L12 26.5Z" fill="#FF7043"/>
+        <!-- Cute Legs -->
+        <path d="M30 48V55M27 55H32M36 48V55M33 55H38" stroke="#FF7043" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="hero-badge">✨ Aotearoa Braided River Conservation & Digital Showcase</div>
+    <h1>Meet the Tarapirohe</h1>
+    <p>
+      Discover New Zealand’s agile, endemic black-fronted tern! Explore how our class combined ecological research with creative coding to build interactive games protecting this taonga species.
+    </p>
+
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#fcfaf5"></path>
+      </svg>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- LEARNING SUMMARY SECTION -->
+    <section class="learning-section">
+      <div class="section-header">
+        <h2>What We Learned Along the River</h2>
+        <p>Before coding a single line, we researched what makes the Tarapirohe unique—and why braided river habitats need our protection.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">🏞️</div>
+          <h3>Braided River Habitats</h3>
+          <p>Tarapirohe nest on dynamic shingle islands in braided rivers—shifting habitats shaped by water flow from the mountains to the sea.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🐟</div>
+          <h3>River-to-Sea Food Webs</h3>
+          <p>From aquatic insects and skinks inland to small fish along the coast, every link in the food web keeps the Tarapirohe thriving.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🛡️</div>
+          <h3>Threats & Protection</h3>
+          <p>Introduced predators, hydro dams, climate-driven floods, and human disturbance threaten nests—making conservation awareness vital.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">💻</div>
+          <h3>Game Design & Coding</h3>
+          <p>We turned science into playable stories—designing mechanics, artwork, and challenges hosted live on GitHub Pages.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAMES SHOWCASE SECTION -->
+    <div class="section-header">
+      <h2>Play Our Student Games</h2>
+      <p>Click any game card below to launch and play it live during our presentation!</p>
+    </div>
+
+    <section class="games-grid" id="gamesGrid">
+      <!-- Cards injected dynamically by JavaScript -->
+    </section>
+  </main>
+
+  <footer>
+    Created with 💛 for our Tarapirohe Presentation • Hosted on GitHub Pages
+  </footer>
+
+  <!-- PRESENTATION MODAL -->
+  <div class="modal-backdrop" id="gameModal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-window">
+      <div class="modal-bar">
+        <div class="modal-title-group">
+          <h3 id="modalTitle">Game Title</h3>
+          <span id="modalCreators">Creators</span>
+        </div>
+        <div class="modal-controls">
+          <a id="modalExternalLink" href="#" target="_blank" rel="noopener" class="btn-external">Open in New Tab ↗</a>
+          <button class="btn-close" onclick="closeModal()">✕ Back to Showcase</button>
+        </div>
+      </div>
+      <iframe id="modalIframe" class="modal-iframe" src=""></iframe>
+    </div>
+  </div>
+
+  <script>
+    // Complete list of student games from your document
+    const games = [
+      {
+        title: "Tarapirohe’s 2D Adventure",
+        creators: "Aarrav & Jacob",
+        description: "Guide the Tarapirohe through an action-packed 2D world while overcoming river hazards.",
+        url: "https://michaela1335.github.io/tarapirohe-s-2d-adventure-by-aarrav-and-jacob/",
+        status: "live"
+      },
+      {
+        title: "Flappy Tarapirohe",
+        creators: "Dylan, Krishna & Riley",
+        description: "Test your flight reflexes and navigate tricky obstacles in the skies above the river.",
+        url: "https://michaela1335.github.io/flappy-tarahirope-by-dylan-krishna-and-riley/",
+        status: "live"
+      },
+      {
+        title: "Save the Tarapirohe",
+        creators: "Ethan, Cooper & AJ",
+        description: "Take on the conservation mission to protect nests and keep the Tarapirohe safe from danger.",
+        url: "https://michaela1335.github.io/save-the-tarapirohe-by-ethan-cooper-and-aj/",
+        status: "live"
+      },
+      {
+        title: "Crossing the Braided River",
+        creators: "Grace, Alyssa & Quynh",
+        description: "Navigate shifting shingle channels and fast-flowing currents across a braided river.",
+        url: "https://michaela1335.github.io/crossing-the-braided-river-by-grace-alyssa-and-quynh/",
+        status: "live"
+      },
+      {
+        title: "Tarapirohe Migration",
+        creators: "Madoc & Alex",
+        description: "Experience the seasonal journey between inland breeding rivers and coastal feeding grounds.",
+        url: "https://michaela1335.github.io/tarapirohe-migration-by-madoc-and-alex/",
+        status: "live"
+      },
+      {
+        title: "Floods, Dams & Climate Change",
+        creators: "Dembran & Jayden",
+        description: "Explore how changing water levels, dams, and extreme weather impact river habitats.",
+        url: "https://michaela1335.github.io/Tarapirohe-s-Floods-Dams-and-Climate-Change-by-dembran-and-jayden/",
+        status: "live"
+      },
+      {
+        title: "Tarapirohe Diner",
+        creators: "Zoe, Daniah & Auni",
+        description: "Serve up the right insects, skinks, and river delicacies to keep hungry terns energized!",
+        url: "https://michaela1335.github.io/Tarapirohe-diner-by-zoe-daniah-and-auni/",
+        status: "live"
+      },
+      {
+        title: "River to Sea Food Web",
+        creators: "Katherine, Charlie & Kayden",
+        description: "Discover how ki uta ki tai (mountains to the sea) connects every creature in the ecosystem.",
+        url: "https://michaela1335.github.io/Tarapirohe-the-river-to-sea-food-web-by-katherine-charlie-and-kayden/",
+        status: "live"
+      },
+      {
+        title: "Imposter Tarapirohe",
+        creators: "Harivamsha & Emily B",
+        description: "Can you spot the real Tarapirohe from look-alike manu? Test your bird ID skills!",
+        url: "https://michaela1335.github.io/tarapirohe-versus-the-like-a-like-manu-by-harivamsha-and-emily-b/",
+        status: "live"
+      },
+      {
+        title: "Tarapirohe’s Flight Academy",
+        creators: "Jonty & Joseph",
+        description: "Earn your wings and master aerial maneuvers in the Tarapirohe Flight Academy.",
+        url: "https://michaela1335.github.io/Tarapirohe-flight-academy-by-jonty-and-joseph/",
+        status: "live"
+      },
+      {
+        title: "Tarapirohe’s Braided River",
+        creators: "Emily & Gauri",
+        description: "An exciting braided river survival adventure currently undergoing final tune-ups.",
+        url: "https://michaela1335.github.io/Tarapirohe-braided-river-by-emily-and-gauri/",
+        status: "coming-soon"
+      },
+      {
+        title: "Tarapirohe Project",
+        creators: "Ryan’s Group",
+        description: "Another awesome Tarapirohe game currently in development by Ryan’s team!",
+        url: "",
+        status: "coming-soon"
+      }
+    ];
+
+    const grid = document.getElementById("gamesGrid");
+
+    // Build all game cards
+    games.forEach((game) => {
+      const card = document.createElement("article");
+      const isComingSoon = game.status === "coming-soon";
+      card.className = isComingSoon ? "game-card coming-soon" : "game-card";
+
+      // Automated live thumbnail via WordPress mShots
+      const thumbUrl = `https://s0.wp.com/mshots/v1/${encodeURIComponent(game.url)}?w=800`;
+
+      if (isComingSoon) {
+        card.innerHTML = `
+          <div class="thumb-box">
+            <div class="coming-soon-placeholder">
+              <div class="coming-soon-badge">✨ Coming Soon</div>
+              <div class="coming-soon-sub">Polishing our code & artwork!</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="creators-tag">By ${game.creators}</span>
+            <h3>${game.title}</h3>
+            <p>${game.description}</p>
+            <div class="card-footer">
+              <span>In Progress</span>
+              <span>🛠️ Launching Soon</span>
+            </div>
+          </div>
+        `;
+      } else {
+        card.onclick = () => openModal(game);
+        card.innerHTML = `
+          <div class="thumb-box">
+            <img src="${thumbUrl}" alt="${game.title} preview" loading="lazy" />
+            <div class="play-overlay">
+              <div class="play-pill">▶ Play Live Game</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="creators-tag">By ${game.creators}</span>
+            <h3>${game.title}</h3>
+            <p>${game.description}</p>
+            <div class="card-footer">
+              <span>Interactive Web Game</span>
+              <span class="action-text">Launch ↗</span>
+            </div>
+          </div>
+        `;
+      }
+
+      grid.appendChild(card);
+    });
+
+    // Modal Controls
+    const modal = document.getElementById("gameModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalCreators = document.getElementById("modalCreators");
+    const modalExternalLink = document.getElementById("modalExternalLink");
+    const modalIframe = document.getElementById("modalIframe");
+
+    function openModal(game) {
+      modalTitle.textContent = game.title;
+      modalCreators.textContent = `Created by ${game.creators}`;
+      modalExternalLink.href = game.url;
+      modalIframe.src = game.url;
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("active");
+      modalIframe.src = ""; // Stop audio/gameplay when closed
+      document.body.style.overflow = "";
+    }
+
+    function closeModalOnBackdrop(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // Allow Escape key to close the presentation modal
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("active")) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
